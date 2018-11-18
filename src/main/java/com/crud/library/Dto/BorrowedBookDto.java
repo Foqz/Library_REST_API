@@ -9,7 +9,7 @@ import java.util.Date;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BorrowListDto {
+public class BorrowedBookDto {
     private Long id;
     private Long specimenId;
     private Long userId;

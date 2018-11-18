@@ -5,22 +5,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "borrow_list")
-public class BorrowList {
+public class BorrowedBook {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "specimen_id")
-    private Long specimenId;
-    @Column(name = "user_id")
-    private Long userId;
+    @ManyToOne
+    @JoinColumn(name = "specimen_id")
+    private Specimen specimen;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     @Column (name = "borrow_date")
-    private Date borrowDate;
+    private LocalDate borrowDate;
     @Column (name = "return_date")
-    private Date returnDate;
+    private LocalDate returnDate;
+
+
 }

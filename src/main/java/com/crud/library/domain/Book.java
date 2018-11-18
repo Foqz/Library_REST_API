@@ -5,12 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "books")
+@Entity
+@Table(name = "books")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,5 +23,7 @@ public class Book {
     @Column(name = "author")
     private String author;
     @Column(name = "written_in")
-    private Date writtenIn;
+    private LocalDate writtenIn;
+    @OneToMany(targetEntity = Specimen.class,mappedBy = "book")
+    private List<Specimen> specimenList;
 }
