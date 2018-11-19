@@ -1,5 +1,4 @@
 package com.crud.library.mapper;
-
 import com.crud.library.Dto.SpecimenDto;
 import com.crud.library.domain.Book;
 import com.crud.library.domain.BorrowedBook;
@@ -7,9 +6,7 @@ import com.crud.library.domain.Specimen;
 import com.crud.library.service.DbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
@@ -18,9 +15,9 @@ public class SpecimenMapper {
     private DbService dbService;
 
     public Specimen mapToSpecimen(SpecimenDto specimenDto){
-        Optional<Book> book = dbService.findBookById(specimenDto.getTitleId());
+        Book book = dbService.findBookById(specimenDto.getTitleId());
         List<BorrowedBook> borrowedBookList = dbService.findBorrowedBookListBySpecimenId(specimenDto.getSpecimenId()); // czy to ok? do poprawy
-        return new Specimen( specimenDto.getSpecimenId(),
+        return new Specimen(specimenDto.getSpecimenId(),
                 specimenDto.getTitleId(),
                 specimenDto.getBookStatus(),
                 book,

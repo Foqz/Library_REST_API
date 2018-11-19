@@ -10,12 +10,9 @@ import com.crud.library.mapper.UserMapper;
 import com.crud.library.service.DbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 import java.util.List;
-
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("v1/library")
 public class LibraryController {
@@ -62,6 +59,9 @@ public class LibraryController {
     public boolean borrowBook(@RequestParam("userId") Long userId,@RequestParam("specimenId")Long specimenId) {
         return service.borrowBook(userId,specimenId);
     }
-
+    @PostMapping(value = "returnBook")
+    public boolean returnBook(@RequestParam("specimenId")Long specimenId) {
+        return service.returnBook(specimenId);
+    }
 
 }

@@ -22,8 +22,8 @@ public class Specimen {
     @Column(name = "book_status")
     private Enum bookStatus;
     @ManyToOne
-    @JoinColumn(name = "title_id")
-    private Optional<Book> book;
+    @JoinColumn(name = "book")
+    private Book book;
     @OneToMany(targetEntity = BorrowedBook.class,mappedBy = "specimen")
     private List<BorrowedBook> borrowedBook;
 
