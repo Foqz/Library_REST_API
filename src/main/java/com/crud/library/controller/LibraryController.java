@@ -14,7 +14,7 @@ import java.util.List;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("v1/library")
+@RequestMapping("/v1/library")
 public class LibraryController {
     @Autowired
     private DbService service;
