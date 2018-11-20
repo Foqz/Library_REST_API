@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Getter
 @AllArgsConstructor
@@ -17,7 +16,7 @@ public class BorrowedBook {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "specimen_id")
+    @JoinColumn(name = "specimen")
     private Specimen specimen;
     @ManyToOne
     @JoinColumn(name = "user_id")

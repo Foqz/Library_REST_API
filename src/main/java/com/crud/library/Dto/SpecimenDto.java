@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class SpecimenDto {
     private Long specimenId;
     private Long titleId;
-    private Enum bookStatus;
+    private String bookStatus;
 }

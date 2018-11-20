@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Optional;
 
 @Getter
 @AllArgsConstructor
@@ -20,7 +19,7 @@ public class Specimen {
     @Column(name = "title_id")
     private Long titleId;
     @Column(name = "book_status")
-    private Enum bookStatus;
+    private String bookStatus;
     @ManyToOne
     @JoinColumn(name = "book")
     private Book book;

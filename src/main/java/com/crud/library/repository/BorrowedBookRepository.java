@@ -10,5 +10,5 @@ import java.util.List;
 public interface BorrowedBookRepository extends CrudRepository<BorrowedBook,Long> {
     List<BorrowedBook> findAllBySpecimenOrderByBorrowDate(Specimen specimen);
 
-    BorrowedBook findBySpecimenId(Long specimenId);
+    BorrowedBook findBySpecimen(Specimen specimen);
 }

@@ -75,7 +75,7 @@ public class DbService {
             }
         }
         if (isBorrowed) {
-            BorrowedBook borrowedBook = borrowedBookRepository.findBySpecimenId(specimenId);
+            BorrowedBook borrowedBook = borrowedBookRepository.findBySpecimen(specimen);
             BorrowedBook borrowedBookAfterReturn = new BorrowedBook(specimenId,specimen,borrowedBook.getUser(),borrowedBook.getBorrowDate(),LocalDate.now());
             borrowedBookRepository.save(borrowedBookAfterReturn);
             return true;
