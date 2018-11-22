@@ -1,1 +1,1 @@
-Library REST_API backend. Application provides methods for managing simple library database.
+Library REST_API. Application provides methods for managing simple library database.
