@@ -1,1 +1,1 @@
-Library REST_API under construction
+Library REST_API backend. Application provides methods for managing simple library database.
